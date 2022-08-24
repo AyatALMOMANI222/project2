@@ -1,7 +1,8 @@
 const express =require ("express")
 const friendRouter = express.Router()
-const {createfriend} = require("../controller/friend")
+const {createfriend,getAllFriend,deleteFriendById,updatedFriendById} = require("../controller/friend")
 friendRouter.post("/" , createfriend)
-
-
+friendRouter.get("/",getAllFriend)
+friendRouter.delete("/",deleteFriendById)
+// friendRouter.put("/",updatedFriendById)
 module.exports= friendRouter;

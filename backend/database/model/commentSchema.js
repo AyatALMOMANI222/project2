@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const commentSchema= new mongoose.Schema({
-//commenter :{ type:String },
 comment:{ type:String , required :true},
 postId:{ type: mongoose.Schema.Types.ObjectId, ref: "postmodel" },
 userId:{ type: mongoose.Schema.Types.ObjectId, ref: "usermodel" },
