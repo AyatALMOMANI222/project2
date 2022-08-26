@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const port = 5000;
-
+const cors = require("cors")
+app.use(cors())
 const db = require("./database/db");
 const commentRouter = require("./routes/commentRouter");
 app.use(express.json());

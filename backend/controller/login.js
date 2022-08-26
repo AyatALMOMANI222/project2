@@ -8,31 +8,38 @@ const login = (req, res) => {
     .find({ email: email })
     .then((result) => {
       if (result.length == 0) {
-        res.json({ success: false, message: "the email doesnt exist" });
+        res.json({ success: false, 
+          message: "the email doesnt exist" });
       }
-      if (result.length > 0) {
-        bcrypt.compare(result[0].password, password, (result2, err) => {
-          if (err) {
-            res.json({ err });
-          }
+      // res.json(result)
+      if (result.length>0) {
+        const hasspass = result[0].password;
+      bcrypt.compare(password, hasspass, (err, result2) => {
+        // bcrypt.compare( result[0].password,password,(result2, err) => {
+        //   if (err) {
+        //     res.json({ err , yy:"as"});
+        //   }
+
           if (result2 == true) {
             const payload = {
               id: result[0]._id,
-              country: result[0].country,
-              role: result[0].role,
+           
             };
-            const secret = process.env.secret;
+            const secret = "ameer";
             const token = jwt.sign(payload, secret);
             res.json({
               success: true,
               token,
               message: "login successfully",
             });
-          } else {
-            res.status(403).json({
+          }
+          else{
+            res.status(404).json({
               success: false,
               message: "the password you have entered is incorrected",
+              result,
             });
+            console.log({result2});
           }
         });
       }

@@ -1,0 +1,84 @@
+// import axios from "axios"
+// import { useEffect, useState } from "react"
+// import { useParams, useNavigate } from "react-router-dom"
+// import { useSelector } from "react-redux"
+// const OneProduct =()=>{
+//     const Navegate=useNavigate();
+
+//       const state = useSelector((state) => {
+//         return {
+//           token: state.auth.token,
+//           isLoggedIn: state.auth.isLoggedIn,
+     
+//         };
+//       });
+// const{ id} = useParams()
+// const [pro , setPro]=useState({})
+
+//     const getProById=()=>{
+// axios.get("http://localhost:5000/product/oneproduct/"+id).then((result)=>{
+   
+//     console.log(result.data);
+//     console.log(id);
+//     setPro(result.data)
+// }).catch((err)=>{
+//     console.log(err);
+// })
+//     }
+
+
+//     const addToCart=(productId)=>{
+//         console.log(state.token);
+//         axios
+//       .post("http://localhost:5000/cart", {
+//         productId:productId
+//     },{
+//         headers: {
+//           authorization: "Bearer " + state.token,
+//         //   هون استخدمناها مشان كل يوزر الو كارت خاصة فيه لهيك اخدت التوكن
+//         },
+//         // ال productid الاشي الي بدي ادخله جوا الكارت 
+//       })
+//     //   بتاخد التوكن بهاي ال header
+//             .then((result)=>{
+//                 console.log(result);
+//             }).catch((err)=>{
+//                 console.log(err);
+//             })
+//     }
+
+// useEffect(getProById , [])
+//     return (<div>
+//         {
+//           pro.title 
+          
+          
+//         }
+//         {/* <img  src={`${ pro.img}`}/> */}
+// {
+//     pro.length&&pro.map((element, index)=>{
+//         return(<div>
+
+// <h5>{element.title}</h5>
+// <h6>{element.size}</h6>
+// <h5>{element.price}</h5>
+// <img src={`${element.img}`}/>
+
+
+
+// <button onClick={()=>{
+//     addToCart(element._id)
+// }}>add to cart</button>
+
+
+//         </div>)
+//     })
+
+// }
+
+
+
+
+//     </div>)
+// }
+// export default OneProduct

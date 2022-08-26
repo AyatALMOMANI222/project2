@@ -10,7 +10,7 @@ const authentication = (req, res, next) => {
   }
 
   token = token.split(" ")[1];
-  const secret = process.env.SECRET;
+  const secret = "ameer";
   //Verify that it is correct or not
   jwt.verify(token, secret, (err, result) => {
     //! important statement
@@ -21,6 +21,7 @@ const authentication = (req, res, next) => {
       res.status(403).json({
         success: true,
         message: "The token is invalid or expired",
+        err
       });
       // if token is correct
     } else {

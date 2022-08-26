@@ -1,6 +1,7 @@
 const friendSchema = require("../database/model/friendSchema");
 const createfriend = (req, res) => {
-  const { friendId, userId } = req.body;
+  const userId = req.token.id
+  const { friendId } = req.body;
   const createfriend = new friendSchema({
     friendId,
     userId,

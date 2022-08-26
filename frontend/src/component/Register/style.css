@@ -1,0 +1,22 @@
+.lo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+border: 0ch;
+margin-top: 150px;
+
+
+}
+.lo input{
+   width: 200px; 
+   height: 30px;
+  
+}
+.lo button{
+    width: 100px;
+    height: 30px;
+    border: 0ch;
+    font: 100px;
+}

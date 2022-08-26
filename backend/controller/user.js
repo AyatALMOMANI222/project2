@@ -1,26 +1,27 @@
 const userSchema = require("../database/model/userSchema");
 const createUser = (req, res) => {
   const {
-    FirstName,
-    LastName,
-    Age,
-    Country,
-    Email,
-    Password,
+    firstName,
+    lastName,
+    age,
+    country,
+    email,
+    password,
     sex,
     role,
     education,
   } = req.body;
   const createUser = new userSchema({
-    FirstName,
-    LastName,
-    Age,
-    Country,
-    Email,
-    Password,
+    firstName,
+    lastName,
+    age,
+    country,
+    email,
+    password,
     sex,
     role,
     education,
+  
   });
   createUser
     .save()
